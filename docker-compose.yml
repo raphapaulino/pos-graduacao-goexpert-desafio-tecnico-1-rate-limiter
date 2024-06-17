@@ -8,7 +8,24 @@ services:
       - '6379:6379'
     volumes:
       - redis_data:/data
+    # networks:
+    #   - my-gorlimiter-network
+
+  ratelimiter-app:
+    container_name: goapp-rlimiter
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '8080:8080'
+    depends_on:
+      - redis
+    # networks:
+    #   - my-gorlimiter-network
 
 volumes:
   redis_data:
     driver: local
+
+# networks:
+#   my-gorlimiter-network:

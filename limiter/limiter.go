@@ -19,6 +19,7 @@ type RateLimiter struct {
 func NewRateLimiter() *RateLimiter {
 	config, err := configs.LoadConfig(".")
 	if err != nil {
+		// fmt.Println("limiter.go file, NewRateLimiter Load Config error")
 		panic(err)
 	}
 
