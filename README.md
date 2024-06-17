@@ -53,7 +53,7 @@ Teste seu rate limiter sob diferentes condições de carga para garantir que ele
 git clone git@github.com:raphapaulino/pos-graduacao-goexpert-desafio-tecnico-1-rate-limiter.git
 ```
 
-#### 4. (Opcional) Instalar o Docker no sistema operacional:
+#### 4. Instalar o Docker no sistema operacional:
 
 É possível encontrar todas as instruções de como baixar e instalar o Docker nos sistemas operacionais Windows, Mac ou Linux [aqui](https://docs.docker.com/engine/install/).
 
@@ -68,24 +68,12 @@ go mod tidy
 2. Ainda na raiz do projeto, via terminal, executar o comando abaixo que irá subir um container redis:
 
 ```
-docker-compose up -d
-```
-
-3. Na sequência, à partir da raiz do projeto, acesse o diretório `server` da seguinte forma:
-
-```
-cd cmd/server
-```
-
-4. Então execute o comando abaixo:
-
-```
-go run main.go
+docker compose up -d
 ```
 
 ## Testes
 
-Ainda no diretório `/cmd/server`, para rodar os testes execute o seguinte comando:
+Ainda no diretório raiz do projeto, para rodar os testes execute o comando abaixo em um outro terminal:
 
 ```
 go test -v
@@ -93,7 +81,7 @@ go test -v
 
 ## Alterações das configurações das requisições para testes
 
-1. Acesse o diretório `/cmd/server` e edit o arquivo `.env`.
+1. Edit o arquivo `.env` na raiz do projeto.
 
 2. **Informação adicional:** Há dois arquivos `.http` no diretório `/test` para fazer requisições individuais e testar a efetividade.
 
